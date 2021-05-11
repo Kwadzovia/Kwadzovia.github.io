@@ -1,5 +1,0 @@
----
-type: "pages"
-permalink: /
----
-HELLOOOO

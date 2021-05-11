@@ -1,4 +1,0 @@
----
-type: pages
-permalink: /contact/
----
