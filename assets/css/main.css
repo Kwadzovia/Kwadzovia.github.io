@@ -3436,6 +3436,11 @@ input, select, textarea {
 
 		}
 
+/* landingText Seli */
+	.landingText {
+		text-align: center;
+		
+	}
 /* Main */
 
 	#main {
@@ -3692,6 +3697,7 @@ input, select, textarea {
 
 			#main > .main:first-child {
 				border-top: 0;
+				/* text-align: center; */
 			}
 
 			#main > .main > .image.main:first-child {
@@ -3708,6 +3714,7 @@ input, select, textarea {
 					border-top-left-radius: 0.25em;
 					border-bottom-right-radius: 0;
 					border-bottom-left-radius: 0;
+					
 				}
 
 		@media screen and (max-width: 1280px) {
