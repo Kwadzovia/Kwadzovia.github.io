@@ -1,0 +1,500 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 3 4
+Title "MCU Schematic"
+Date "2021-06-13"
+Rev ""
+Comp "reVolt Ltd."
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:C C12
+U 1 1 60CAE852
+P 10250 9550
+F 0 "C12" H 10365 9596 50  0000 L CNN
+F 1 "0.1uF" H 10365 9505 50  0000 L CNN
+F 2 "" H 10288 9400 50  0001 C CNN
+F 3 "~" H 10250 9550 50  0001 C CNN
+	1    10250 9550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9750 9800 10250 9800
+Wire Wire Line
+	10250 9800 10250 9700
+Text GLabel 10250 9800 2    25   Input ~ 0
+3.3Vcc
+Text GLabel 9750 9700 2    25   Input ~ 0
+OSC1
+Text GLabel 9750 9600 2    25   Input ~ 0
+OSC2
+Text GLabel 10200 9800 3    25   Input ~ 0
+mcu_VDD
+Wire Wire Line
+	1000 10100 1000 9900
+$Comp
+L Capstone-rescue:R-Device R7
+U 1 1 60B4BE13
+P 1000 9750
+F 0 "R7" H 1070 9796 50  0000 L CNN
+F 1 "1.5kOhm" H 1070 9705 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 930 9750 50  0001 C CNN
+F 3 "~" H 1000 9750 50  0001 C CNN
+	1    1000 9750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 9600 1000 9600
+Text GLabel 1550 9600 2    100  Input ~ 0
+3.3Vcc
+$Comp
+L Capstone-rescue:LED-Device D2
+U 1 1 60B44AA6
+P 1400 9600
+F 0 "D2" H 1393 9817 50  0000 C CNN
+F 1 "GREEN" H 1393 9726 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 1400 9600 50  0001 C CNN
+F 3 "~" H 1400 9600 50  0001 C CNN
+	1    1400 9600
+	1    0    0    -1  
+$EndComp
+Text GLabel 3550 7700 0    50   Input ~ 0
+MCU_CAN_TX
+Text GLabel 3550 7600 0    50   Input ~ 0
+MCU_CAN_RX
+Text GLabel 9750 8500 2    50   Input ~ 0
+MCU_SPI_SDI
+Text GLabel 9750 8400 2    50   Input ~ 0
+MCU_SPI_SDO
+Text GLabel 9750 8600 2    50   Input ~ 0
+MCU_SPI_SCK
+Text GLabel 9750 9300 2    50   Input ~ 0
+MCU_SDI_SS
+$Comp
+L power:GNDD #PWR05
+U 1 1 60CBF71E
+P 1000 10100
+F 0 "#PWR05" H 1000 9850 50  0001 C CNN
+F 1 "GNDD" H 1004 9945 50  0000 C CNN
+F 2 "" H 1000 10100 50  0001 C CNN
+F 3 "" H 1000 10100 50  0001 C CNN
+	1    1000 10100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR025
+U 1 1 60D11BA1
+P 10550 9400
+F 0 "#PWR025" H 10550 9150 50  0001 C CNN
+F 1 "GNDD" H 10554 9245 50  0000 C CNN
+F 2 "" H 10550 9400 50  0001 C CNN
+F 3 "" H 10550 9400 50  0001 C CNN
+	1    10550 9400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Capstone-rescue:C-Device C13
+U 1 1 60B01ACD
+P 2650 5100
+F 0 "C13" H 2535 5054 50  0000 R CNN
+F 1 "30pF" H 2535 5145 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal" H 2688 4950 50  0001 C CNN
+F 3 "~" H 2650 5100 50  0001 C CNN
+	1    2650 5100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2650 5250 2650 5300
+Wire Notes Line
+	3550 4300 3550 5850
+Text Notes 800  4500 0    50   ~ 0
+Clock Oscillator
+Wire Wire Line
+	1350 5250 1350 5300
+Wire Wire Line
+	2150 4950 2650 4950
+$Comp
+L Capstone-rescue:C-Device C11
+U 1 1 60B01944
+P 1350 5100
+F 0 "C11" H 1600 5050 50  0000 R CNN
+F 1 "30pF" H 1650 5150 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal" H 1388 4950 50  0001 C CNN
+F 3 "~" H 1350 5100 50  0001 C CNN
+	1    1350 5100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1350 4950 1850 4950
+Text GLabel 2650 4950 1    25   Input ~ 0
+OSC2
+$Comp
+L Device:Crystal Y1
+U 1 1 60C07A27
+P 2000 4950
+F 0 "Y1" H 2000 5218 50  0000 C CNN
+F 1 "20Mhz" H 2000 5127 50  0000 C CNN
+F 2 "Crystal:Crystal_HC49-U_Vertical" H 2000 4950 50  0001 C CNN
+F 3 "https://abracon.com/datasheets/ILSI/HC49USM.pdf" H 2000 4950 50  0001 C CNN
+	1    2000 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 5300 2000 5300
+Wire Wire Line
+	2000 5400 2000 5300
+Connection ~ 2000 5300
+Wire Wire Line
+	2000 5300 2650 5300
+Text GLabel 1350 4950 1    25   Input ~ 0
+OSC1
+$Comp
+L power:GNDD #PWR017
+U 1 1 60CBEF56
+P 2000 5400
+F 0 "#PWR017" H 2000 5150 50  0001 C CNN
+F 1 "GNDD" H 2004 5245 50  0000 C CNN
+F 2 "" H 2000 5400 50  0001 C CNN
+F 3 "" H 2000 5400 50  0001 C CNN
+	1    2000 5400
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	450  5850 16050 5850
+Text Notes 3750 4500 0    50   ~ 0
+ICSP Programmer/Debugger (picKit 4)
+$Comp
+L Device:C C16
+U 1 1 60C997AD
+P 5750 5400
+F 0 "C16" H 5450 5450 50  0000 L CNN
+F 1 "0.1uF" H 5400 5350 50  0000 L CNN
+F 2 "" H 5788 5250 50  0001 C CNN
+F 3 "~" H 5750 5400 50  0001 C CNN
+	1    5750 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R16
+U 1 1 60C9A6AB
+P 5950 5150
+F 0 "R16" V 5743 5150 50  0000 C CNN
+F 1 "470" V 5834 5150 50  0000 C CNN
+F 2 "" V 5880 5150 50  0001 C CNN
+F 3 "~" H 5950 5150 50  0001 C CNN
+	1    5950 5150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R15
+U 1 1 60C9B731
+P 5750 4850
+F 0 "R15" H 5950 4800 50  0000 R CNN
+F 1 "10k" H 5950 4900 50  0000 R CNN
+F 2 "" V 5680 4850 50  0001 C CNN
+F 3 "~" H 5750 4850 50  0001 C CNN
+	1    5750 4850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5800 5150 5750 5150
+Wire Wire Line
+	5750 5150 5750 5000
+Text GLabel 5750 4700 1    25   Input ~ 0
+3.3Vcc
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 60CB4A11
+P 5250 5250
+F 0 "J1" H 5250 4900 50  0000 C CNN
+F 1 "Conn_01x02" H 5250 5000 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5250 5250 50  0001 C CNN
+F 3 "~" H 5250 5250 50  0001 C CNN
+	1    5250 5250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5450 5250 5750 5250
+Wire Wire Line
+	5450 5150 5750 5150
+Connection ~ 5750 5150
+$Comp
+L Device:R R17
+U 1 1 60CAA804
+P 6250 5000
+F 0 "R17" H 6180 4954 50  0000 R CNN
+F 1 "50k" H 6180 5045 50  0000 R CNN
+F 2 "" V 6180 5000 50  0001 C CNN
+F 3 "~" H 6250 5000 50  0001 C CNN
+	1    6250 5000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6100 5150 6250 5150
+Connection ~ 6250 5150
+Wire Wire Line
+	6250 5150 6500 5150
+Text GLabel 6250 4850 1    25   Input ~ 0
+mcu_VDD
+$Comp
+L Connector_Generic:Conn_01x05 J2
+U 1 1 60CB07B4
+P 4350 5150
+F 0 "J2" H 4430 5192 50  0000 L CNN
+F 1 "Conn_01x05" H 4430 5101 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 4350 5150 50  0001 C CNN
+F 3 "~" H 4350 5150 50  0001 C CNN
+	1    4350 5150
+	1    0    0    -1  
+$EndComp
+Text GLabel 6500 5150 2    25   Input ~ 0
+MCLR
+Text GLabel 4150 4950 0    25   Input ~ 0
+MCLR
+Text GLabel 4150 5050 0    25   Input ~ 0
+mcu_VDD
+$Comp
+L power:GNDD #PWR029
+U 1 1 60D0E7BA
+P 5750 5550
+F 0 "#PWR029" H 5750 5300 50  0001 C CNN
+F 1 "GNDD" H 5754 5395 50  0000 C CNN
+F 2 "" H 5750 5550 50  0001 C CNN
+F 3 "" H 5750 5550 50  0001 C CNN
+	1    5750 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L PIC32MX530F128H:PIC32MX530F128H-I_PT U7
+U 1 1 60D289BA
+P 3550 7200
+F 0 "U7" H 6650 7587 60  0000 C CNN
+F 1 "PIC32MX530F128H-I_PT" H 6650 7481 60  0000 C CNN
+F 2 "TQFP64_PT_MCH" H 6650 7440 60  0001 C CNN
+F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/PIC32MX1XX2XX5XX%2064100-PIN_Family_60001290F.pdf" H 6650 7481 60  0001 C CNN
+	1    3550 7200
+	1    0    0    -1  
+$EndComp
+Text Notes 900  6200 0    100  ~ 0
+PIC32MX530F128H MCU (64 Pin)\n
+Wire Wire Line
+	9850 9500 9750 9500
+$Comp
+L Device:C C23
+U 1 1 60D4746E
+P 10500 8150
+F 0 "C23" H 10615 8196 50  0000 L CNN
+F 1 "10uF" H 10615 8105 50  0000 L CNN
+F 2 "" H 10538 8000 50  0001 C CNN
+F 3 "~" H 10500 8150 50  0001 C CNN
+	1    10500 8150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9750 8000 10500 8000
+$Comp
+L power:GNDD #PWR030
+U 1 1 60D47475
+P 10500 8350
+F 0 "#PWR030" H 10500 8100 50  0001 C CNN
+F 1 "GNDD" H 10504 8195 50  0000 C CNN
+F 2 "" H 10500 8350 50  0001 C CNN
+F 3 "" H 10500 8350 50  0001 C CNN
+	1    10500 8350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10500 8300 10500 8350
+$Comp
+L Device:C C14
+U 1 1 60D49DF7
+P 2650 9150
+F 0 "C14" H 2765 9196 50  0000 L CNN
+F 1 "0.1uF" H 2765 9105 50  0000 L CNN
+F 2 "" H 2688 9000 50  0001 C CNN
+F 3 "~" H 2650 9150 50  0001 C CNN
+	1    2650 9150
+	-1   0    0    -1  
+$EndComp
+Text GLabel 2650 9000 0    25   Input ~ 0
+3.3Vcc
+$Comp
+L power:GNDD #PWR026
+U 1 1 60D49E00
+P 2650 9400
+F 0 "#PWR026" H 2650 9150 50  0001 C CNN
+F 1 "GNDD" H 2654 9245 50  0000 C CNN
+F 2 "" H 2650 9400 50  0001 C CNN
+F 3 "" H 2650 9400 50  0001 C CNN
+	1    2650 9400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 9300 2650 9350
+Wire Wire Line
+	2850 9100 2850 9350
+Wire Wire Line
+	2850 9350 2650 9350
+Connection ~ 2650 9350
+Wire Wire Line
+	2650 9350 2650 9400
+$Comp
+L Device:C C22
+U 1 1 60D4FD0A
+P 2950 9750
+F 0 "C22" H 3065 9796 50  0000 L CNN
+F 1 "0.1uF" H 3065 9705 50  0000 L CNN
+F 2 "" H 2988 9600 50  0001 C CNN
+F 3 "~" H 2950 9750 50  0001 C CNN
+	1    2950 9750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 9600 2950 9600
+Text GLabel 2950 9600 0    25   Input ~ 0
+3.3Vcc
+$Comp
+L power:GNDD #PWR028
+U 1 1 60D4FD12
+P 2950 10000
+F 0 "#PWR028" H 2950 9750 50  0001 C CNN
+F 1 "GNDD" H 2954 9845 50  0000 C CNN
+F 2 "" H 2950 10000 50  0001 C CNN
+F 3 "" H 2950 10000 50  0001 C CNN
+	1    2950 10000
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 9900 2950 9950
+Wire Wire Line
+	3550 9700 3150 9700
+Wire Wire Line
+	3150 9700 3150 9950
+Wire Wire Line
+	3150 9950 2950 9950
+Connection ~ 2950 9950
+Wire Wire Line
+	2950 9950 2950 10000
+Wire Wire Line
+	2650 9000 3550 9000
+Wire Wire Line
+	2850 9100 3550 9100
+$Comp
+L Device:C C15
+U 1 1 60D59CB1
+P 2950 8150
+F 0 "C15" H 3065 8196 50  0000 L CNN
+F 1 "0.1uF" H 3065 8105 50  0000 L CNN
+F 2 "" H 2988 8000 50  0001 C CNN
+F 3 "~" H 2950 8150 50  0001 C CNN
+	1    2950 8150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 8000 2950 8000
+Text GLabel 2950 8000 0    25   Input ~ 0
+3.3Vcc
+$Comp
+L power:GNDD #PWR027
+U 1 1 60D59CB9
+P 2950 8400
+F 0 "#PWR027" H 2950 8150 50  0001 C CNN
+F 1 "GNDD" H 2954 8245 50  0000 C CNN
+F 2 "" H 2950 8400 50  0001 C CNN
+F 3 "" H 2950 8400 50  0001 C CNN
+	1    2950 8400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 8300 2950 8350
+Wire Wire Line
+	3550 8100 3150 8100
+Wire Wire Line
+	3150 8100 3150 8350
+Wire Wire Line
+	3150 8350 2950 8350
+Connection ~ 2950 8350
+Wire Wire Line
+	2950 8350 2950 8400
+Text GLabel 3550 7800 0    25   Input ~ 0
+MCLR
+Connection ~ 10250 9400
+Wire Wire Line
+	10250 9400 10550 9400
+Wire Wire Line
+	9850 9400 9850 9500
+Wire Wire Line
+	9850 9400 10250 9400
+NoConn ~ 3550 7900
+NoConn ~ 3550 8200
+NoConn ~ 3550 8300
+NoConn ~ 3550 8400
+NoConn ~ 3550 8500
+NoConn ~ 3550 8800
+NoConn ~ 3550 8900
+NoConn ~ 3550 9200
+NoConn ~ 3550 9300
+NoConn ~ 3550 9400
+NoConn ~ 3550 9500
+NoConn ~ 3550 9800
+NoConn ~ 3550 9900
+NoConn ~ 3550 10000
+NoConn ~ 3550 10100
+NoConn ~ 3550 10200
+NoConn ~ 3550 10300
+NoConn ~ 9750 10300
+NoConn ~ 9750 10200
+NoConn ~ 9750 10100
+NoConn ~ 9750 10000
+NoConn ~ 9750 9900
+NoConn ~ 9750 9400
+NoConn ~ 9750 9200
+NoConn ~ 9750 9100
+NoConn ~ 9750 9000
+NoConn ~ 9750 8900
+NoConn ~ 9750 8800
+NoConn ~ 9750 8700
+NoConn ~ 9750 8300
+NoConn ~ 9750 8200
+NoConn ~ 9750 8100
+NoConn ~ 9750 7900
+NoConn ~ 9750 7800
+NoConn ~ 9750 7700
+NoConn ~ 9750 7600
+NoConn ~ 9750 7500
+NoConn ~ 9750 7400
+Text GLabel 3550 8600 0    25   Input ~ 0
+PGEC1
+Text GLabel 3550 8700 0    25   Input ~ 0
+PGED1
+Text GLabel 10350 9400 1    25   Input ~ 0
+mcu_VSS
+Text GLabel 4150 5150 0    25   Input ~ 0
+mcu_VSS
+Text GLabel 4150 5250 0    25   Input ~ 0
+PGEC1
+Text GLabel 4150 5350 0    25   Input ~ 0
+PGED1
+NoConn ~ 3550 7500
+NoConn ~ 3550 7400
+NoConn ~ 3550 7300
+Text GLabel 9750 7200 2    50   Input ~ 0
+MCU_RELAY_OPEN
+Wire Notes Line
+	6950 4300 6950 5850
+Wire Notes Line
+	450  4300 6950 4300
+Text Notes 12100 6150 0    100  ~ 0
+MCU Relay Control
+Text GLabel 9750 7300 2    50   Input ~ 0
+MCU_RELAY_CLOSE
+Wire Notes Line
+	11800 5850 11800 9950
+NoConn ~ 3550 7200
+$EndSCHEMATC
